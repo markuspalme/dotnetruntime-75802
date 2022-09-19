@@ -6,17 +6,13 @@ namespace testapp;
 
 public class ProductImage : IEntity
 {
-	[Preserve]
 	public string ProductNumber { get; set; }
-
-	[Preserve]
 
 	public Guid Id { get; set; }
 }
 
 public interface IEntity
 {
-	[Preserve]
 	Guid Id { get; set; }
 }
 
@@ -41,7 +37,8 @@ public class AppDelegate : UIApplicationDelegate {
 
 		try
 		{
-			var pi = System.Text.Json.JsonSerializer.Deserialize<ProductImage>(x);
+			//var pi = System.Text.Json.JsonSerializer.Deserialize<ProductImage>(x);
+			var pi = Newtonsoft.Json.JsonConvert.DeserializeObject<ProductImage>(x);
 			msg = pi.ProductNumber + " - " + pi.Id;
 		}
 		catch (Exception e)
