@@ -28,6 +28,7 @@ public class AppDelegate : UIApplicationDelegate {
 		// create a new window instance based on the screen size
 		Window = new UIWindow (UIScreen.MainScreen.Bounds);
 
+
 		var x = @"{
                 ""productNumber"": ""P1"",
                 ""id"": ""46c67d7c-fd15-4d89-9fed-991c48c1bacf""
